@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsx-style/component-lifecycle</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <style type="text/css">
+        .alert-xx{
+            font-size:44px;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<!--
+mounting:
+getDefaultProps()
+getInitialState()
+componentWillMount()
+render()
+componentDidMount()
+
+updating:
+componentWillReceiveProps()
+shouldComponentUpdate()
+componentWillUpdate()
+render()
+componentDidUpdate()
+
+unmounting:
+componentWillUnMount()
+-->
+
+<script type="text/jsx">
+    var Hello=React.createClass({
+        getInitialState:function(){
+            alert("init");
+            return {
+                opacity:0.5,
+                fontSize:"55px",
+                background:"blue"
+            };
+        },
+        componentWillMount:function(){
+            alert("will");
+        },
+        render: function () {
+            var styleObj={
+                opacity:0.5,
+                fontSize:"44px",
+                background:"blue"
+            };
+            return <div style={{color:this.state.opacity,fontSize:this.state.fontSize,background:this.state.background}}
+                        className="alert-xx">Hello {this.props.title} {this.props.name}</div>
+            /*return <div style={this.state} className="alert-xx">Hello {this.props.title} {this.props.name}</div>*/
+            /*return <div style={styleObj} className="alert-xx">Hello {this.props.title} {this.props.name}</div>*/
+            /*return <div style={{color:"red", fontSize: '33px'}}</div>*/
+        },
+        componentDidMount: function () {
+            alert("did");
+            setTimeout(function(){
+                this.setState({
+                    opacity:1.0,
+                    fontSize:"77px",
+                    background:"red"
+                });
+            }.bind(this),1000)
+        }
+    });
+    React.render(<Hello title="Mr" name="world"/>,document.getElementById("container"));
+</script>
+</body>
+</html>
