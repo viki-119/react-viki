@@ -15,3 +15,5 @@ react组件之间如何交流：
 http://www.tuicool.com/articles/AzQzEbq
 
 https://segmentfault.com/a/1190000004044592
+
+理解JSX和组件：http://www.infoq.com/cn/articles/react-jsx-and-component/
