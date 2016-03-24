@@ -9,3 +9,9 @@ cdn库:
 
 react基于chrome相关开发工具：
 https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+
+react组件之间如何交流：
+
+http://www.tuicool.com/articles/AzQzEbq
+
+https://segmentfault.com/a/1190000004044592
