@@ -1,4 +1,6 @@
 # React
+阮一峰的网络日志-react: http://www.ruanyifeng.com/blog/2015/03/react.html
+
 官网：http://facebook.github.io/react/
 
 cdn库:
