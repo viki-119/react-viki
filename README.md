@@ -1,5 +1,11 @@
 # React
-阮一峰的网络日志-react: http://www.ruanyifeng.com/blog/2015/03/react.html
+ES6学习之解构赋值 ：http://www.lxxyx.win/2016/04/16/ES6学习之解构赋值/?utm_source=tuicool&utm_medium=referral
+
+React 组件之间如何交流：http://www.tuicool.com/articles/AzQzEbq
+
+阮一峰-ECMAScript6：http://es6.ruanyifeng.com/#docs/intro
+
+阮一峰-react: http://www.ruanyifeng.com/blog/2015/03/react.html
 
 官网：http://facebook.github.io/react/
 
