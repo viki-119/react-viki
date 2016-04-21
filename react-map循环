@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsx-style/component-lifecycle</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <style type="text/css">
+        .alert-xx{
+            font-size:44px;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<!--
+['h','e','l','l','o']
+[{key:'h',value:'e'},{key:'w',value:'s'}]
+{key:'value',sss:'sss'}
+-->
+<script type="text/jsx">
+    var Hello=React.createClass({
+        render: function(){
+            var $nodes = [{key:'h',value:'e'},{key:'w',value:'s'}].map(function(str){
+            return (<span>{str.key}{str.value}</span>);
+            });
+            return (<div className="custom-component">{$nodes}</div>);
+        }
+    });
+    React.render(<Hello/>,document.getElementById("container"));
+</script>
+</body>
+</html>
