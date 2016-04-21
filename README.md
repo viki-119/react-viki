@@ -1,4 +1,6 @@
 # React
+<MaterialAccepanceModal id={this.state.id} visible={this.state.visible} />
+
 ES6学习之解构赋值 ：http://www.lxxyx.win/2016/04/16/ES6学习之解构赋值/?utm_source=tuicool&utm_medium=referral
 
 React组件属性部类（propTypes）校验：http://www.myexception.cn/web/2016594.html
