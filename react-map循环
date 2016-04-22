@@ -21,10 +21,23 @@
 <script type="text/jsx">
     var Hello=React.createClass({
         render: function(){
+
+            var option=[];
+            var data={key:'value',sss:'sss'};
+            for(key in data){
+                option.push(<option value={key}>{data[key]}</option>);
+            };
+
             var $nodes = [{key:'h',value:'e'},{key:'w',value:'s'}].map(function(str){
-            return (<span>{str.key}{str.value}</span>);
+                return (<span>{str.key}{str.value}</span>);
             });
-            return (<div className="custom-component">{$nodes}</div>);
+            
+            return (
+                <div>
+                    <div className="custom-component">{$nodes}</div>
+                    <select>{option}</select>
+                </div>
+            );
         }
     });
     React.render(<Hello/>,document.getElementById("container"));
