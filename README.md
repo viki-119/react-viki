@@ -1,5 +1,16 @@
 # React
-<MaterialAccepanceModal id={this.state.id} visible={this.state.visible} />
+// 可以声明 prop 为指定的 JS 基本类型。默认
+// 情况下，这些 prop 都是可传可不传的。
+    optionalArray: React.PropTypes.array,
+    optionalBool: React.PropTypes.bool,
+    optionalFunc: React.PropTypes.func,
+    optionalNumber: React.PropTypes.number,
+    optionalObject: React.PropTypes.object,
+    optionalString: React.PropTypes.string,
+    optionalNode: React.PropTypes.node,
+    optionalElement: React.PropTypes.element,
+    optionalMessage: React.PropTypes.instanceOf(Message),
+    optionalEnum: React.PropTypes.oneOf(['News', 'Photos']),
 
 ES6学习之解构赋值 ：http://www.lxxyx.win/2016/04/16/ES6学习之解构赋值/?utm_source=tuicool&utm_medium=referral
 
