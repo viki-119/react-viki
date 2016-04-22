@@ -28,13 +28,18 @@
                 option.push(<option value={key}>{data[key]}</option>);
             };
 
+            var $hello = ['h','e','l','l','o'].map(function(str){
+                return (<span>{str}</span>);
+            });
+
             var $nodes = [{key:'h',value:'e'},{key:'w',value:'s'}].map(function(str){
                 return (<span>{str.key}{str.value}</span>);
             });
-            
+
             return (
                 <div>
                     <div className="custom-component">{$nodes}</div>
+                    <div>{$hello}</div>
                     <select>{option}</select>
                 </div>
             );
