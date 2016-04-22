@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsx-style/component-lifecycle</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <style type="text/css">
+        .alert-xx{
+            font-size:44px;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/jsx">
+    var props = { foo: 'default' };
+    var component = <Hello {...props} foo={'override'} />;
+    console.log(component.props.foo);
+
+    var Hello=React.createClass({
+        render: function(){
+            return (
+                <div>
+                    <a {...this.props}>{'√'}{this.props.children}</a>
+                    <div {...this.props} />
+                    <p {...this.props} foo={'override'}></p>
+                </div>
+            );
+        }
+    });
+    React.render(<Hello type='dd' ss='sss' href="/checked.html">Click here!</Hello>,document.getElementById("container"));
+</script>
+</body>
+</html>
