@@ -32,7 +32,7 @@
                 return (<span>{str}</span>);
             });
 
-            var $nodes = [{key:'h',value:'e'},{key:'w',value:'s'}].map(function(str){
+            var $nodes = [{key:'h',value:'e'},{key:'w',value:'s'}].map((str)=>{
                 return (<span>{str.key}{str.value}</span>);
             });
 
