@@ -26,7 +26,9 @@ cdn库:
             <script src="http://cdn.bootcss.com/react/0.14.7/react.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
 
-react基于chrome相关开发工具：
-https://chrome.google.com/webstore/category/apps
+##开发工具
+google应用商店：https://chrome.google.com/webstore/category/apps  
+json-handle  
+React Developer Tools  
 
 理解JSX和组件：http://www.infoq.com/cn/articles/react-jsx-and-component/
