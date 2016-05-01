@@ -30,5 +30,6 @@ cdn库:
 google应用商店：https://chrome.google.com/webstore/category/apps  
 json-handle  
 React Developer Tools  
+Postman - REST Client shortcut  
 
 理解JSX和组件：http://www.infoq.com/cn/articles/react-jsx-and-component/
