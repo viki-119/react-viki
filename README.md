@@ -34,7 +34,8 @@ Postman - REST Client shortcut
 
 理解JSX和组件：http://www.infoq.com/cn/articles/react-jsx-and-component/     
 
-在项目中有package.json的地方执行npm install 命令即可下载依赖
+在项目中有package.json的地方执行npm install 命令即可下载依赖    
+http://www.shuizhongyueming.com/2014/07/12/use-package-json-to-manage-the-dependencies-package-of-npm/   
 
 https://pages.github.com/    
 dnspod
