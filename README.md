@@ -32,7 +32,9 @@ json-handle
 React Developer Tools  
 Postman - REST Client shortcut  
 
-理解JSX和组件：http://www.infoq.com/cn/articles/react-jsx-and-component/
+理解JSX和组件：http://www.infoq.com/cn/articles/react-jsx-and-component/     
+
+在项目中有package.json的地方执行npm install 命令即可下载依赖
 
 https://pages.github.com/    
 dnspod
