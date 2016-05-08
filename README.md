@@ -39,3 +39,5 @@ http://www.shuizhongyueming.com/2014/07/12/use-package-json-to-manage-the-depend
 
 https://pages.github.com/    
 dnspod
+
+git命令：http://blog.jobbole.com/53573/
