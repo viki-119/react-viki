@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+</head>
+<body>
+    <input id="xx" type="button" value="button1"/>
+    <div id="mount">mount</div>
+    <div id="initialstate">initialstate</div>
+    <div id="timer">timer</div>
+    <div id="Todo">Todo</div>
+    <div id="virtualDom">id 为virtualDom</div>
+</body>
+<script type="text/javascript">
+    window.onload=function(){
+        document.getElementById("xx").onclick=function(){
+            alert("hhh");
+        }
+    }
+</script>
+<script type="text/jsx">
+  /**************************************************************************/
+  var child = React.createElement('li', null, 'Text Content');
+  var virtualDom = React.createElement('ul', { className: 'my-list' }, child);
+
+  React.render(virtualDom,document.getElementById("virtualDom"));
+  /**************************************************************************/
+  var HelloMessage=React.createClass({
+      render:function (){
+          return <div>Hello {this.props.name}</div>
+      }
+  });
+  React.render(<HelloMessage name="david"/>,document.getElementById("mount"));
+  /**************************************************************************/
+  var HelloInitialState=React.createClass({
+      getInitialState:function(){//getInitialState必须要有一个返回值,否则会报错.
+          // alert("init");
+          return {
+              opacity:0.5,
+              fontSize:"22px",
+              color:'red'
+          }
+      },
+      render: function () {
+          var styleObj={//这个对象的调用采用style={styleObj}这种形式.
+              fontSize:"33px"
+          };
+          return <div style={{color:this.state.color,fontSize:this.state.fontSize}}>hello getInitialState()</div>;
+          /*return <div style={this.state}>hello getInitialState() </div>;*/
+          /*return <div style={styleObj}>hello getInitialState() </div>;*/
+      }
+  });
+
+  React.render(<HelloInitialState/>,document.getElementById("initialstate"));
+  /**************************************************************************/
+  var Timer=React.createClass({
+     getInitialState: function () {
+         return {
+             secondsElapsed:0
+         }
+     },
+      tick:function(){
+          this.setState({secondsElapsed:this.state.secondsElapsed+1});
+      },
+      render:function(){
+          return <div>Second Elapsed:{this.state.secondsElapsed}</div>;
+      },
+      componentDidMount: function () {
+          this.interval=setInterval(this.tick,1000);
+          // this.timeOut=setTimeout(this.tick, 400);
+      },
+      componentWillUnmount:function(){
+          clearInterval(this.interval);
+      }
+  });
+  React.render(<Timer />,document.getElementById("timer"));
+  /**************************************************************************/
+
+  var TodoList=React.createClass({
+    render:function(){
+      var createItem= function (item) {
+       return <li key={item.id}>{item.text}</li>;
+      };
+      // console.log(this.props.items);
+      const {items} = this.props;
+      return <ul>{items && items.map(createItem)}</ul>;
+    },
+  });
+
+  var TodoApp=React.createClass({
+    getInitialState:function(){
+      return {
+        items:[],
+        text:'',
+      };
+    },
+    onChange: function (e) {
+      this.setState({
+        text:e.target.value,
+      });
+    },
+    handleSubmit:function(e){
+      const {text, items} = this.state;
+      e.preventDefault();
+      var nextItems=items.concat([{text, id: Date.now()}]);
+      var nextText='';
+      this.setState({
+          items:nextItems,
+          text:nextText
+      });
+    },
+    render: function () {
+      const {text, items} = this.state;
+      return (
+        <div>
+          <h3>TODO</h3>
+          <TodoList items={items}/>
+          <form onSubmit={this.handleSubmit}>
+            <input onChange={this.onChange} value={text} />
+            <button>{'Add #'+(items.length+1)}</button>
+          </form>
+        </div>
+      );
+    },
+  });
+  React.render(<TodoApp />,document.getElementById("Todo"));
+</script>
+</html>
