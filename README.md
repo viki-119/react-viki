@@ -1,4 +1,4 @@
-# React
+# react
 // 可以声明 prop 为指定的 JS 基本类型。默认  
 // 情况下，这些 prop 都是可传可不传的。  
     optionalArray: React.PropTypes.array,  
